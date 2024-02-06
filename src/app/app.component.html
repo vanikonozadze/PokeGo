@@ -1,1 +1,19 @@
+<nav>
+  <h1>PokeGo</h1>
+</nav>
+<div>
+  <input
+    type="text"
+    placeholder="Search for pokemons!"
+    class="search-input"
+    [(ngModel)]="searchItem"
+    (input)="filterPokemons()"
+  />
+  <div class="pokemons-container">
+    <div class="pokemon-box" *ngFor="let pokemon of pokemonArray">
+      <p>{{ pokemon.id }}</p>
+      <p>{{ pokemon.name }}</p>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>
