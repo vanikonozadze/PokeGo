@@ -12,4 +12,8 @@ export class PokemonService {
   getPokemons(): Observable<any> {
     return this.http.get<any>(this.baseApiUrl);
   }
+
+  onPokemon(id: number): Observable<any> {
+    return this.http.get<any>(this.baseApiUrl + '/' + id);
+  }
 }
