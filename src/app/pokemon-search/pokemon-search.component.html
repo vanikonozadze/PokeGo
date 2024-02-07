@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<div>
+  <input
+    type="text"
+    placeholder="Search for pokemons!"
+    class="search-input"
+    [(ngModel)]="searchItem"
+    (input)="filterPokemons()"
+  />
+  <div class="pokemons-container">
+    <div
+      class="pokemon-box"
+      *ngFor="let pokemon of pokemonArray; let i = index"
+      (click)="selectedPokemon(i)"
+      [routerLink]="'pokemon/' + pokemon.id"
+    >
+      <p>{{ pokemon.id }}</p>
+      <img src="{{ pokemon.imageUrl }}" alt="Pokemon" />
+      <p>{{ pokemon.name }}</p>
+    </div>
+  </div>
+</div>
