@@ -22,8 +22,8 @@ export class PokemonSearchComponent implements OnInit {
   fetchPokemons() {
     this.service.getPokemons().subscribe({
       next: (pokemons) => {
-        this.pokemonArray = pokemons.results.slice(0, 100);
-        this.fetchedArray = pokemons.results.slice(0, 100);
+        this.pokemonArray = pokemons.results.slice(0, 30);
+        this.fetchedArray = pokemons.results.slice(0, 30);
         this.fetchPokemonImages();
       },
       error: (err) => {
@@ -37,6 +37,10 @@ export class PokemonSearchComponent implements OnInit {
       this.service.onPokemon(index + 1).subscribe({
         next: (resp) => {
           this.pokemonArray[index].imageUrl = resp.sprites.front_default;
+          this.pokemonArray[index].type = [];
+          for (let i = 0; i < resp.types.length; i++) {
+            this.pokemonArray[index].type.push(resp.types[i].type.name);
+          }
         },
       });
     });
@@ -55,8 +59,12 @@ export class PokemonSearchComponent implements OnInit {
   selectedPokemon(id: number) {
     this.service.onPokemon(id + 1).subscribe({
       next: (resp) => {
-        console.log(resp);
+        for (let i = 0; i < resp.types.length; i++) {}
       },
     });
+  }
+
+  capitalizeFirstLetter(word: string): string {
+    return word.charAt(0).toUpperCase() + word.slice(1);
   }
 }

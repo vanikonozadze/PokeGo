@@ -1,8 +1,14 @@
 nav {
   background-color: red;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav h1 {
+  font-size: 40px;
   color: #fff;
   text-align: center;
+  cursor: pointer;
 }

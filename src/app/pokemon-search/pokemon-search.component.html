@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div>
+<div class="main-container">
   <input
     type="text"
     placeholder="Search for pokemons!"
@@ -15,9 +15,14 @@
       (click)="selectedPokemon(i)"
       [routerLink]="'pokemon/' + pokemon.id"
     >
-      <p>{{ pokemon.id }}</p>
-      <img src="{{ pokemon.imageUrl }}" alt="Pokemon" />
-      <p>{{ pokemon.name }}</p>
+      <p class="pokemon-id">#{{ pokemon.id }}</p>
+      <img class="pokemon-image" src="{{ pokemon.imageUrl }}" alt="Pokemon" />
+      <p class="pokemon-name">{{ capitalizeFirstLetter(pokemon.name) }}</p>
+      <ul>
+        <li *ngFor="let type of pokemon.type">
+          {{ capitalizeFirstLetter(type) }}
+        </li>
+      </ul>
     </div>
   </div>
 </div>
