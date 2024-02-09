@@ -9,8 +9,9 @@ export class PokemonService {
   baseApiUrl: string = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon';
   constructor(private http: HttpClient) {}
 
-  getPokemons(): Observable<any> {
-    return this.http.get<any>(this.baseApiUrl);
+  getPokemons(offset: number, limit: number): Observable<any> {
+    const url = `${this.baseApiUrl}?offset=${offset}&limit=${limit}`;
+    return this.http.get(url);
   }
 
   onPokemon(id: number): Observable<any> {

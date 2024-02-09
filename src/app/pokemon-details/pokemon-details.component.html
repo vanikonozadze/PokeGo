@@ -1,8 +1,61 @@
 <app-header></app-header>
 
 <div class="container">
-  <img
-    src="{{ pokemon.sprites.front_default }}"
-    alt="{{ pokemon.name }} image"
-  />
+  <p class="pokemon-name-id">{{ pokemon.name }} #{{ pokemon.id }}</p>
+  <div class="pokemon-type">
+    <p *ngFor="let type of pokemon.types">
+      {{ type.type.name }}
+    </p>
+  </div>
+  <div class="pokemon-box-1">
+    <img
+      class="pokemon-image"
+      [src]="pokemon.sprites.front_default"
+      alt="{{ pokemon.name }} image"
+    />
+    <ul>
+      <li>Base experience: {{ pokemon.base_experience }}</li>
+      <li>Height: {{ pokemon.height }}</li>
+      <li>Weight: {{ pokemon.weight }}</li>
+    </ul>
+  </div>
+  <table class="horizontal-table">
+    <tr>
+      <ng-container *ngFor="let name of pokemon.stats">
+        <th>{{ name.stat.name }}</th>
+      </ng-container>
+    </tr>
+    <tr>
+      <ng-container *ngFor="let name of pokemon.stats">
+        <td>{{ name.base_stat }}</td>
+      </ng-container>
+    </tr>
+  </table>
+  <button class="next-pokemon-button" (click)="goToNextPokemon()">
+    <div class="vertical-text">
+      <span>P</span>
+      <span>o</span>
+      <span>k</span>
+      <span>e</span>
+      <span>m</span>
+      <span>o</span>
+      <span>n</span>
+      <br />
+      <span>#{{ pokemon.id + 1 }}</span>
+    </div>
+  </button>
+
+  <button class="previous-pokemon-button" (click)="goToPreviousPokemon()">
+    <div class="vertical-text">
+      <span>P</span>
+      <span>o</span>
+      <span>k</span>
+      <span>e</span>
+      <span>m</span>
+      <span>o</span>
+      <span>n</span>
+      <br />
+      <span>#{{ pokemon.id - 1 }}</span>
+    </div>
+  </button>
 </div>

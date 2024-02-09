@@ -1,5 +1,89 @@
 .container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(215, 215, 215);
+}
+
+.pokemon-box-1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pokemon-box-1 ul {
+  list-style: none;
+}
+
+.pokemon-box-1 ul li {
+  font-size: 20px;
+}
+
+.pokemon-name-id {
+  font-size: 32px;
+}
+
+.pokemon-type {
+  display: flex;
+}
+
+.pokemon-type p {
+  margin-right: 10px;
+}
+
+.pokemon-image {
+  width: 200px;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+}
+
+.horizontal-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-table tr {
+  display: flex;
+}
+
+.horizontal-table th,
+.horizontal-table td {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.previous-pokemon-button {
+  width: 50px;
+  height: 352px;
+  position: absolute;
+  left: -50px;
+  cursor: pointer;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.next-pokemon-button {
+  width: 50px;
+  height: 352px;
+  position: absolute;
+  right: -50px;
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.vertical-text {
+  display: flex;
+  flex-direction: column;
 }

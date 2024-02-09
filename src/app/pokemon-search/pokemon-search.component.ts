@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -12,6 +12,9 @@ export class PokemonSearchComponent implements OnInit {
   fetchedArray: any[] = [];
   pokemonImageUrlArray: string[] = [];
   searchItem: string = '';
+  offset = 10;
+  limit = 40;
+  loading = false;
 
   constructor(private service: PokemonService) {}
 
@@ -19,11 +22,24 @@ export class PokemonSearchComponent implements OnInit {
     this.fetchPokemons();
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+      !this.loading
+    ) {
+      this.fetchPokemons();
+    }
+  }
+
   fetchPokemons() {
-    this.service.getPokemons().subscribe({
+    this.loading = true;
+    this.service.getPokemons(this.offset, this.limit).subscribe({
       next: (pokemons) => {
-        this.pokemonArray = pokemons.results.slice(0, 30);
-        this.fetchedArray = pokemons.results.slice(0, 30);
+        this.pokemonArray = pokemons.results;
+        this.fetchedArray = pokemons.results;
+        this.offset += this.limit;
+        this.loading = false;
         this.fetchPokemonImages();
       },
       error: (err) => {
