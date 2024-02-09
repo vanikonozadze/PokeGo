@@ -12,7 +12,7 @@ export class PokemonSearchComponent implements OnInit {
   fetchedArray: any[] = [];
   pokemonImageUrlArray: string[] = [];
   searchItem: string = '';
-  offset = 10;
+  offset = 0;
   limit = 40;
   loading = false;
 

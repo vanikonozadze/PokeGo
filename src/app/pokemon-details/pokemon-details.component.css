@@ -8,6 +8,8 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(215, 215, 215);
+  animation-name: transitionIn;
+  animation-duration: 1s;
 }
 
 .pokemon-box-1 {
@@ -86,4 +88,47 @@ td {
 .vertical-text {
   display: flex;
   flex-direction: column;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pokeball-spinner {
+  width: 75px;
+  height: 75px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/768px-Pok%C3%A9_Ball_icon.svg.png");
+  background-size: cover;
+  animation: spin 1s linear infinite;
+}
+
+.loading-indicator p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }

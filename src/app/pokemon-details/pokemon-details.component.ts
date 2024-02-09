@@ -28,6 +28,14 @@ export class PokemonDetailsComponent implements OnInit {
     });
   }
 
+  loadPokemonDetails(id: number): void {
+    this.service.onPokemon(id).subscribe({
+      next: (response) => {
+        this.pokemon = response;
+      },
+    });
+  }
+
   goToNextPokemon(): void {
     const nextPokemonId = Number(this.route.snapshot.params['id']) + 1;
     console.log(nextPokemonId);

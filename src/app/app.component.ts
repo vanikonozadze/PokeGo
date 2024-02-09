@@ -8,10 +8,6 @@ import { PokemonService } from './services/pokemon.service';
 })
 export class AppComponent {
   title = 'PokeGo';
-  pokemonArray: any[] = [];
-  fetchedArray: any[] = [];
-  pokemonImageUrlArray: string[] = [];
-  searchItem: string = '';
 
   constructor(private service: PokemonService) {}
 

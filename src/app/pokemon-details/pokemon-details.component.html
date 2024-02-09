@@ -1,6 +1,11 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="loading-indicator" *ngIf="!pokemon">
+  <div class="pokeball-spinner"></div>
+  <p>Loading...</p>
+</div>
+
+<div class="container" *ngIf="pokemon">
   <p class="pokemon-name-id">{{ pokemon.name }} #{{ pokemon.id }}</p>
   <div class="pokemon-type">
     <p *ngFor="let type of pokemon.types">
