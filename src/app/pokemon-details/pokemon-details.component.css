@@ -2,7 +2,7 @@
   position: relative;
   width: 800px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,9 +13,23 @@
 }
 
 .pokemon-box-1 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pokemon-image {
+  animation-name: transitionIn;
+  animation-duration: 1s;
+}
+
+.shiny-default-button {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  display: flex;
+  gap: 20px;
 }
 
 .pokemon-box-1 ul {
@@ -70,6 +84,9 @@ td {
   height: 352px;
   position: absolute;
   left: -50px;
+  font-size: 18px;
+  color: #fff;
+  background-color: red;
   cursor: pointer;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -80,6 +97,9 @@ td {
   height: 352px;
   position: absolute;
   right: -50px;
+  font-size: 18px;
+  color: #fff;
+  background-color: red;
   cursor: pointer;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -96,7 +116,7 @@ td {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 300px;
 }
 
 @keyframes spin {

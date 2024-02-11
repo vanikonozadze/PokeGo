@@ -13,9 +13,20 @@
     </p>
   </div>
   <div class="pokemon-box-1">
+    <div class="shiny-default-button">
+      <button (click)="toggleDefault()">default</button>
+      <button (click)="toggleShiny()">shiny</button>
+    </div>
     <img
+      *ngIf="default_button"
       class="pokemon-image"
       [src]="pokemon.sprites.front_default"
+      alt="{{ pokemon.name }} image"
+    />
+    <img
+      *ngIf="shiny_button"
+      class="pokemon-image"
+      [src]="pokemon.sprites.front_shiny"
       alt="{{ pokemon.name }} image"
     />
     <ul>
@@ -46,7 +57,12 @@
       <span>o</span>
       <span>n</span>
       <br />
-      <span>#{{ pokemon.id + 1 }}</span>
+      <ng-container *ngIf="pokemon.id + 1 === 1001; else nextCase">
+        <span>#1</span>
+      </ng-container>
+      <ng-template #nextCase>
+        <span>#{{ pokemon.id + 1 }}</span>
+      </ng-template>
     </div>
   </button>
 
@@ -60,7 +76,12 @@
       <span>o</span>
       <span>n</span>
       <br />
-      <span>#{{ pokemon.id - 1 }}</span>
+      <ng-container *ngIf="pokemon.id - 1 === 0; else otherCase">
+        <span>#1000</span>
+      </ng-container>
+      <ng-template #otherCase>
+        <span>#{{ pokemon.id - 1 }}</span>
+      </ng-template>
     </div>
   </button>
 </div>

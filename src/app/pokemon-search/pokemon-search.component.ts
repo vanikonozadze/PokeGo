@@ -36,8 +36,8 @@ export class PokemonSearchComponent implements OnInit {
     this.loading = true;
     this.service.getPokemons(this.offset, this.limit).subscribe({
       next: (pokemons) => {
-        this.pokemonArray = pokemons.results;
-        this.fetchedArray = pokemons.results;
+        this.pokemonArray = pokemons.results.slice(0, 1000);
+        this.fetchedArray = pokemons.results.slice(0, 1000);
         this.offset += this.limit;
         this.loading = false;
         this.fetchPokemonImages();
