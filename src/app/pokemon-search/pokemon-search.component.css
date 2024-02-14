@@ -15,8 +15,9 @@
 
 .pokemons-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 1215px;
+  max-width: 1350px;
   margin: 0 auto;
   margin-top: 50px;
   animation-name: transitionIn;
@@ -107,4 +108,9 @@
     opacity: 1;
     transform: rotateX(0);
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
 }

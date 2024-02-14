@@ -16,6 +16,10 @@ export class PokemonSearchComponent implements OnInit {
   limit = 40;
   loading = false;
 
+  totalItems: number = 1000;
+  itemsPerPage: number = 100;
+  currentPage: number = 1;
+
   constructor(private service: PokemonService) {}
 
   ngOnInit(): void {
@@ -82,5 +86,16 @@ export class PokemonSearchComponent implements OnInit {
 
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  get paginatedData() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+
+    return this.pokemonArray.slice(start, end);
+  }
+
+  changePage(page: number) {
+    this.currentPage = page;
   }
 }

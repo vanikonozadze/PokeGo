@@ -1,0 +1,12 @@
+<nav aria-label="...">
+  <ul class="pagination">
+    <li
+      (click)="pageClicked(page)"
+      *ngFor="let page of pages"
+      class="page-item"
+      [ngClass]="{ active: page == currentPage }"
+    >
+      <span class="page-link">{{ page }}</span>
+    </li>
+  </ul>
+</nav>

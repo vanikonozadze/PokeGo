@@ -11,7 +11,7 @@
   <div class="pokemons-container">
     <div
       class="pokemon-box"
-      *ngFor="let pokemon of pokemonArray; let i = index"
+      *ngFor="let pokemon of paginatedData; let i = index"
       (click)="selectedPokemon(i)"
       [routerLink]="'pokemon/' + pokemon.id"
     >
@@ -24,9 +24,18 @@
         </li>
       </ul>
     </div>
+
     <div class="loading-indicator" *ngIf="loading">
       <div class="pokeball-spinner"></div>
       <p>Loading...</p>
     </div>
   </div>
+  <app-pagination
+    class="pagination"
+    *ngIf="!loading"
+    [totalItems]="totalItems"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+  ></app-pagination>
 </div>
