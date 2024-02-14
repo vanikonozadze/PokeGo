@@ -70,4 +70,8 @@ export class PokemonDetailsComponent implements OnInit {
     }
     this.router.navigate(['pokemon', previousPokemonId]);
   }
+
+  capitalizeFirstLetter(word: string): string {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
 }

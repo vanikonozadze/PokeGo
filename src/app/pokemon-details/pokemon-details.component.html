@@ -6,7 +6,9 @@
 </div>
 
 <div class="container" *ngIf="pokemon">
-  <p class="pokemon-name-id">{{ pokemon.name }} #{{ pokemon.id }}</p>
+  <p class="pokemon-name-id">
+    {{ capitalizeFirstLetter(pokemon.name) }} #{{ pokemon.id }}
+  </p>
   <div class="pokemon-type">
     <p *ngFor="let type of pokemon.types">
       {{ type.type.name }}
@@ -14,8 +16,8 @@
   </div>
   <div class="pokemon-box-1">
     <div class="shiny-default-button">
-      <button (click)="toggleDefault()">default</button>
-      <button (click)="toggleShiny()">shiny</button>
+      <button class="default-button" (click)="toggleDefault()">Default</button>
+      <button class="shiny-button" (click)="toggleShiny()">Shiny</button>
     </div>
     <img
       *ngIf="default_button"

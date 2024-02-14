@@ -1,15 +1,22 @@
 .container {
   position: relative;
   width: 800px;
+  height: 450px;
   margin: 0 auto;
   margin-top: 150px;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(215, 215, 215);
-  animation-name: transitionIn;
+  name: transitionIn;
   animation-duration: 1s;
+  background: rgb(158, 66, 81);
+  background: radial-gradient(
+    circle,
+    rgb(45, 102, 177) 0%,
+    rgb(96, 94, 117) 100%
+  );
 }
 
 .pokemon-box-1 {
@@ -30,6 +37,42 @@
   left: 200px;
   display: flex;
   gap: 20px;
+}
+
+.default-button {
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background: rgb(249, 249, 238);
+  background: radial-gradient(
+    circle,
+    rgba(249, 249, 238, 1) 0%,
+    rgba(181, 180, 175, 1) 100%
+  );
+  border: none;
+  cursor: pointer;
+}
+
+.default-button:hover {
+  background: #f0f0f0;
+}
+
+.shiny-button {
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background: rgb(217, 232, 108);
+  background: radial-gradient(
+    circle,
+    rgba(217, 232, 108, 1) 0%,
+    rgba(237, 201, 51, 1) 100%
+  );
+  border: none;
+  cursor: pointer;
+}
+
+.shiny-button:hover {
+  background: rgb(255, 224, 98) 100%;
 }
 
 .pokemon-box-1 ul {
@@ -66,6 +109,7 @@ td {
 .horizontal-table {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .horizontal-table tr {
@@ -81,7 +125,7 @@ td {
 
 .previous-pokemon-button {
   width: 50px;
-  height: 352px;
+  height: 450px;
   position: absolute;
   left: -50px;
   font-size: 18px;
@@ -90,11 +134,18 @@ td {
   cursor: pointer;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  border: none;
+}
+
+.previous-pokemon-button:hover {
+  color: red;
+  background-color: rgb(222, 222, 222);
+  transition: 0.3s;
 }
 
 .next-pokemon-button {
   width: 50px;
-  height: 352px;
+  height: 450px;
   position: absolute;
   right: -50px;
   font-size: 18px;
@@ -103,6 +154,13 @@ td {
   cursor: pointer;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  border: none;
+}
+
+.next-pokemon-button:hover {
+  color: red;
+  background-color: rgb(222, 222, 222);
+  transition: 0.3s;
 }
 
 .vertical-text {
