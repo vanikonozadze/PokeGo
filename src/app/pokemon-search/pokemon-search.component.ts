@@ -17,7 +17,7 @@ export class PokemonSearchComponent implements OnInit {
   loading = false;
 
   totalItems: number = 1000;
-  itemsPerPage: number = 100;
+  itemsPerPage: number = 50;
   currentPage: number = 1;
 
   constructor(private service: PokemonService) {}
