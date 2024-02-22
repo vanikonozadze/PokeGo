@@ -8,14 +8,6 @@
     [(ngModel)]="searchItem"
     (input)="filterPokemons()"
   />
-  <app-pagination
-    class="pagination"
-    *ngIf="!loading"
-    [totalItems]="totalItems"
-    [itemsPerPage]="itemsPerPage"
-    [currentPage]="currentPage"
-    (onClick)="changePage($event)"
-  ></app-pagination>
   <div class="pokemons-container">
     <div
       class="pokemon-box"
@@ -38,4 +30,12 @@
       <p>Loading...</p>
     </div>
   </div>
+  <app-pagination
+    class="pagination"
+    *ngIf="!loading"
+    [totalItems]="totalItems"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+  ></app-pagination>
 </div>
