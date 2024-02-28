@@ -1,27 +1,31 @@
-# PokeGo
+# PokeGo - Your Ultimate Pokémon Companion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+Welcome to PokeGo, your ultimate Pokémon companion app built with Angular! With PokeGo, you can explore hundreds of Pokémon, view their stats, types, and even discover their shiny versions. 
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Explore Hundreds of Pokémon**: Dive into the vast world of Pokémon and browse through a wide array of creatures from various generations.
+  
+- **View Pokémon Stats**: Get detailed insights into each Pokémon's stats including HP, Attack, Defense, Special Attack, Special Defense, and Speed.
 
-## Code scaffolding
+- **Discover Pokémon Types**: Learn about the elemental types of each Pokémon to strategize your battles effectively.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Shiny Pokémon Showcase**: Witness the rare and elusive shiny versions of Pokémon, adding an extra layer of excitement to your exploration.
 
-## Build
+## How to Use
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Browse Pokémon**: Navigate through the list of Pokémon to find the one you're interested in.
+   
+2. **Click on Pokémon**: Click on a specific Pokémon to view its detailed stats and type information.
+   
+3. **Discover Shiny Pokémon**: While viewing a Pokémon, toggle the shiny option to see its shiny variant if available.
+   
+4. **Enjoy Your Pokémon Journey**: Dive deep into the Pokémon world, learn about different species, and enhance your Pokémon knowledge.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run PokeGo locally, follow these steps:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone this repository to your local machine.
+   ```bash
+   git clone https://github.com/your-username/pokego.git
